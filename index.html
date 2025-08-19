@@ -1,43 +1,423 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Damien Hupont — Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DHP — Responsable des Systèmes d’Information | Portfolio</title>
+  <meta name="description" content="Portfolio de DHP, Responsable des Systèmes d’Information (18 ans d’expérience) : projets, compétences, et réalisations en transformation digitale, ERP, BI et sécurité." />
+  <meta name="color-scheme" content="light dark" />
+  <meta property="og:title" content="DHP — Responsable SI | Portfolio" />
+  <meta property="og:description" content="18 ans d’expérience. Projets : migration SaaS RH, CRM 360°, ERP & retail, PRA, e-commerce B2C/B2B, sécurité & virtualisation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="TODO_og-image.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet" />
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:#f6f7fb}
-    .wrap{max-width:900px;margin:40px auto;padding:24px}
-    header{text-align:center;margin-bottom:32px}
-    h1{margin:0}
-    .card{background:#fff;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.07);padding:20px;margin-bottom:18px}
-    ul{margin:0;padding-left:18px}
-    a{color:#0b5bd3;text-decoration:none}
+    :root{
+      --bg: #0b0c10;
+      --panel:#11131a;
+      --card:#141720;
+      --text:#e9ecf1;
+      --muted:#a8b0bf;
+      --brand:#6ee7ff;
+      --accent:#8b5cf6;
+      --ring: rgba(110,231,255,.45);
+      --ok:#10b981;
+      --warn:#f59e0b;
+      --danger:#ef4444;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 14px;
+      --max: 1080px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root{
+        --bg:#f6f8fb; --panel:#ffffff; --card:#ffffff;
+        --text:#11131a; --muted:#4b5563;
+        --brand:#0ea5e9; --accent:#7c3aed;
+        --ring: rgba(14,165,233,.25);
+        --shadow: 0 12px 24px rgba(2,6,23,.08);
+      }
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:
+        radial-gradient(1200px 800px at 80% -10%, rgba(110,231,255,.08), transparent 60%),
+        radial-gradient(900px 600px at -10% 10%, rgba(139,92,246,.10), transparent 50%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:var(--brand); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Layout */
+    .container{max-width:var(--max); margin:0 auto; padding:0 22px}
+    header.site{
+      position:sticky; top:0; z-index:50; backdrop-filter:saturate(160%) blur(10px);
+      background:color-mix(in oklab, var(--panel) 75%, transparent);
+      border-bottom:1px solid color-mix(in oklab, var(--muted) 20%, transparent);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      height:64px;
+    }
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700}
+    .brand .logo{
+      width:36px; height:36px; border-radius:10px;
+      display:grid; place-items:center; background:
+        radial-gradient(80% 80% at 20% 10%, var(--brand), transparent 60%),
+        radial-gradient(80% 80% at 80% 90%, var(--accent), transparent 60%),
+        var(--card);
+      box-shadow:var(--shadow);
+      border:1px solid color-mix(in oklab, var(--brand) 25%, transparent);
+    }
+    .brand span{font-family:Poppins,Inter,sans-serif; letter-spacing:.3px}
+    .nav a.btn{
+      display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:10px;
+      background:var(--card); border:1px solid color-mix(in oklab, var(--muted) 25%, transparent);
+      text-decoration:none; font-weight:600;
+    }
+    .nav a.btn:hover{box-shadow:var(--shadow); transform:translateY(-1px)}
+
+    /* Hero */
+    .hero{padding:84px 0 36px}
+    .hero .grid{display:grid; gap:26px; grid-template-columns: 1.1fr .9fr}
+    .badge{
+      display:inline-flex; gap:10px; align-items:center; padding:6px 10px; border-radius:999px;
+      background:color-mix(in oklab, var(--brand) 10%, var(--card));
+      border:1px solid var(--ring); font-size:.9rem; color:var(--muted)
+    }
+    h1{font-family:Poppins,Inter,sans-serif; font-size:clamp(28px, 5vw, 44px); line-height:1.15; margin:12px 0}
+    .lead{font-size:1.1rem; color:var(--muted)}
+    .cta{display:flex; gap:12px; margin-top:18px; flex-wrap:wrap}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; font-weight:700;
+      background:linear-gradient(135deg, color-mix(in oklab, var(--brand) 70%, var(--card)), color-mix(in oklab, var(--accent) 30%, var(--card)));
+      color:#0b1020; border:0; box-shadow:var(--shadow); text-decoration:none;
+    }
+    .btn.secondary{background:var(--card); color:var(--text); border:1px solid color-mix(in oklab, var(--muted) 25%, transparent)}
+    .btn.ghost{background:transparent; border:1px dashed color-mix(in oklab, var(--muted) 30%, transparent); color:var(--muted)}
+
+    .hero .card{
+      background:var(--card); border:1px solid color-mix(in oklab, var(--muted) 22%, transparent);
+      border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)
+    }
+    .facts{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:12px}
+    .pill{
+      background:color-mix(in oklab, var(--brand) 8%, var(--card));
+      border:1px solid color-mix(in oklab, var(--brand) 30%, transparent);
+      border-radius:12px; padding:10px 12px; font-weight:600
+    }
+    /* Sections */
+    section{padding:42px 0}
+    .section-title{display:flex; align-items:center; gap:10px; margin-bottom:18px}
+    .section-title h2{margin:0; font-size:28px; font-family:Poppins,Inter,sans-serif}
+    .section-title .bar{flex:1; height:1px; background:color-mix(in oklab, var(--muted) 20%, transparent)}
+
+    /* Skills */
+    .chips{display:flex; flex-wrap:wrap; gap:10px}
+    .chip{padding:8px 12px; border:1px solid color-mix(in oklab, var(--muted) 25%, transparent); border-radius:999px; background:var(--panel); font-weight:600}
+    .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+
+    /* Projects */
+    .projects{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    .card{
+      background:var(--card); border:1px solid color-mix(in oklab, var(--muted) 22%, transparent);
+      border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)
+    }
+    .card h3{margin:0 0 6px; font-size:20px}
+    .card p{margin:0 0 10px; color:var(--muted)}
+    .tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:8px}
+    .tag{font-size:.85rem; padding:6px 10px; border-radius:999px; background:color-mix(in oklab, var(--accent) 12%, var(--panel)); border:1px solid color-mix(in oklab, var(--accent) 30%, transparent)}
+    .card .meta{display:flex; gap:10px; align-items:center; color:var(--muted); font-size:.9rem; margin-top:8px}
+    .card:hover{transform:translateY(-2px); transition:transform .2s ease}
+
+    /* Timeline */
+    .timeline{position:relative; padding-left:22px}
+    .timeline::before{content:""; position:absolute; left:7px; top:6px; bottom:6px; width:2px; background:color-mix(in oklab, var(--muted) 25%, transparent)}
+    .item{position:relative; margin:14px 0; padding-left:10px}
+    .item::before{content:""; position:absolute; left:-2px; top:6px; width:10px; height:10px; border-radius:10px; background:var(--brand); box-shadow:0 0 0 4px var(--ring)}
+    .item h4{margin:0 0 4px}
+    .item .sub{color:var(--muted); font-size:.95rem}
+
+    /* Footer */
+    footer{padding:28px 0 48px; color:var(--muted)}
+    .socials{display:flex; gap:12px}
+    .socials a{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:10px; background:var(--panel); border:1px solid color-mix(in oklab, var(--muted) 22%, transparent)}
+    .theme-toggle{margin-left:auto; cursor:pointer}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero .grid{grid-template-columns:1fr}
+      .projects{grid-template-columns:1fr 1fr}
+      .facts{grid-template-columns:1fr 1fr 1fr}
+    }
+    @media (max-width: 680px){
+      .projects{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+    }
+
+    /* Subtle reveal animation */
+    .reveal{opacity:0; transform:translateY(10px); animation:reveal .6s ease forwards; }
+    @keyframes reveal{to{opacity:1; transform:none}}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <h1>Bienvenue 👋</h1>
-      <p>Mon portfolio GitHub Pages</p>
-    </header>
+  <header class="site">
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">💠</div>
+        <span>DHP — Responsable SI</span>
+      </div>
+      <nav>
+        <a class="btn" href="#projets" title="Voir mes projets">Projets</a>
+        <a class="btn" href="#competences" title="Voir mes compétences">Compétences</a>
+        <a class="btn secondary" href="TODO_CV.pdf" download>📄 CV</a>
+        <button class="nav btn ghost theme-toggle" id="themeBtn" type="button" title="Basculer clair/sombre">🌓</button>
+      </nav>
+    </div>
+  </header>
 
-    <section class="card">
-      <h2>À propos</h2>
-      <p>Je suis Damien. Ici je partage mes projets.</p>
+  <main>
+    <section class="hero">
+      <div class="container grid reveal grid-2" style="align-items:center">
+        <div>
+          <span class="badge">✅ Disponible pour opportunités • Paris / Remote</span>
+          <h1>Responsable des Systèmes d’Information<br><span style="color:var(--brand)">18 ans d’expérience</span></h1>
+          <p class="lead">
+            Conduite de projets transverses (ERP & Retail), intégrations .NET/Oracle/SQL Server, e‑commerce B2C/B2B,
+            sécurité & PRA, virtualisation, BI. Focus résultats, qualité et fiabilité du SI.
+          </p>
+          <div class="cta">
+            <a class="btn" href="#projets">🚀 Voir les projets</a>
+            <a class="btn secondary" href="#contact">🤝 Contacter</a>
+            <a class="btn ghost" href="https://github.com/TODO_USERNAME" target="_blank" rel="noreferrer"> GitHub</a>
+            <a class="btn ghost" href="https://www.linkedin.com/in/TODO_LINKEDIN" target="_blank" rel="noreferrer">in LinkedIn</a>
+          </div>
+          <div class="facts">
+            <div class="pill">Retail & ERP</div>
+            <div class="pill">Intégration & Data</div>
+            <div class="pill">Sécurité & PRA</div>
+          </div>
+        </div>
+        <aside class="card">
+          <h3 style="margin:6px 0 8px">En bref</h3>
+          <ul style="margin:0; padding-left:18px">
+            <li>Gestion de parc ~200 postes &gt; 40 serveurs</li>
+            <li>Migrations majeures : RH (SaaS), compta (Talentia → SQL Server)</li>
+            <li>Interfaçage ERP Cegid ↔ Storeland/Winstore/Magento</li>
+            <li>PRA validés (audits Mazars, EY), virtualisation VMware/Hyper‑V</li>
+          </ul>
+        </aside>
+      </div>
     </section>
 
-    <section class="card">
-      <h2>Projets</h2>
-      <ul>
-        <li><strong>Projet 1</strong> — petite description · <a href="#">code</a></li>
-        <li><strong>Projet 2</strong> — petite description · <a href="#">demo</a></li>
-      </ul>
+    <section id="competences" class="container">
+      <div class="section-title"><h2>Compétences clés</h2><div class="bar"></div></div>
+      <div class="grid-2 reveal">
+        <div class="card">
+          <h3>Techniques</h3>
+          <div class="chips" aria-label="Compétences techniques">
+            <span class="chip">Bases de données : Oracle, SQL Server, PostgreSQL, MySQL</span>
+            <span class="chip">Langages : C#, VB .NET, Java, JavaScript, Python, SQL, Bash, PowerShell</span>
+            <span class="chip">Frameworks : .NET (Core, WinForms, ASP.NET), Web API</span>
+            <span class="chip">Systèmes : Windows/Server, Linux (Debian/Ubuntu)</span>
+            <span class="chip">Web : IIS, Apache</span>
+            <span class="chip">BI : Tableau</span>
+            <span class="chip">Virtualisation : VMware, Hyper‑V</span>
+            <span class="chip">Réseaux/Sécu : Cisco, Stormshield, GPO, WSUS, AD</span>
+            <span class="chip">ERP/Retails : Cegid Orli, Storeland, Winstore, Talentia, Alicia SDWorx</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Humaines & Méthodes</h3>
+          <div class="chips">
+            <span class="chip">Gestion de projet</span>
+            <span class="chip">Analyse & synthèse</span>
+            <span class="chip">Pédagogie & accompagnement</span>
+            <span class="chip">Rigueur & qualité</span>
+            <span class="chip">Documentation technique</span>
+            <span class="chip">Planification</span>
+            <span class="chip">Esprit d’équipe</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="card">
-      <h2>Contact</h2>
-      <p><a href="mailto:ton.email@example.com">ton.email@example.com</a></p>
+    <section id="projets" class="container">
+      <div class="section-title"><h2>Projets phares</h2><div class="bar"></div></div>
+      <div class="projects reveal">
+        <!-- 1 -->
+        <article class="card">
+          <h3>Migration RH Alicia (SaaS)</h3>
+          <p>Passage de l’on‑premise au SaaS (SDWorx), adaptation des applis internes, conduite du changement.</p>
+          <div class="tags"><span class="tag">#SaaS</span><span class="tag">#RH</span><span class="tag">#Intégration</span></div>
+          <div class="meta">🔧 Oracle, VB .NET • 🤝 Prestataire</div>
+        </article>
+        <!-- 2 -->
+        <article class="card">
+          <h3>CRM 360° (fusion clients)</h3>
+          <p>Consolidation boutiques + e‑commerce, déduplication, analytics marketing.</p>
+          <div class="tags"><span class="tag">#CRM</span><span class="tag">#Data</span><span class="tag">#Marketing</span></div>
+          <div class="meta">🔧 VB .NET, Oracle, Access</div>
+        </article>
+        <!-- 3 -->
+        <article class="card">
+          <h3>Opt‑in centralisé (RGPD)</h3>
+          <p>Centralisation consentements newsletter, échanges sécurisés avec l’éditeur web.</p>
+          <div class="tags"><span class="tag">#RGPD</span><span class="tag">#DataGov</span></div>
+          <div class="meta">🔧 Oracle, PL/SQL • 🧩 Clever Age</div>
+        </article>
+        <!-- 4 -->
+        <article class="card">
+          <h3>Migration Talentia → SQL Server</h3>
+          <p>Plan de migration multi‑serveurs, adaptation des applis (6 mois), continuité comptable.</p>
+          <div class="tags"><span class="tag">#Migration</span><span class="tag">#Finance</span></div>
+          <div class="meta">🔧 SQL Server, Talentia, .NET</div>
+        </article>
+        <!-- 5 -->
+        <article class="card">
+          <h3>GTA magasins (outil interne)</h3>
+          <p>Planning, absences, interfaces Winstore & RH Alicia, serveur dédié.</p>
+          <div class="tags"><span class="tag">#Workforce</span><span class="tag">#Retail</span></div>
+          <div class="meta">🔧 VB .NET, ASP.NET, AD</div>
+        </article>
+        <!-- 6 -->
+        <article class="card">
+          <h3>B2C Christine‑Laure (Magento)</h3>
+          <p>Flux produits/fotos/tarifs → web, import commandes → ERP Cegid, sécurité des échanges.</p>
+          <div class="tags"><span class="tag">#Ecommerce</span><span class="tag">#Omnicanal</span></div>
+          <div class="meta">🔧 .NET, Oracle, Magento</div>
+        </article>
+        <!-- 7 -->
+        <article class="card">
+          <h3>Parc & salle serveurs</h3>
+          <p>~200 postes &gt;40 serveurs : WSUS, SEP, AD, sauvegardes, PABX.</p>
+          <div class="tags"><span class="tag">#Ops</span><span class="tag">#SysAdmin</span></div>
+          <div class="meta">🔧 Windows/Server, VMware, Hyper‑V</div>
+        </article>
+        <!-- 8 -->
+        <article class="card">
+          <h3>PRA validés (audits)</h3>
+          <p>Rédaction & tests sur environnement virtuel, continuité d’activité.</p>
+          <div class="tags"><span class="tag">#PRA</span><span class="tag">#Cyber</span></div>
+          <div class="meta">🔧 VMware, Hyper‑V</div>
+        </article>
+        <!-- 9 -->
+        <article class="card">
+          <h3>Déploiement Winstore (150 magasins)</h3>
+          <p>Master Windows 10, docs & procédures, planification & support des interventions.</p>
+          <div class="tags"><span class="tag">#POS</span><span class="tag">#Déploiement</span></div>
+          <div class="meta">🔧 Winstore, WSUS, AD</div>
+        </article>
+        <!-- 10 -->
+        <article class="card">
+          <h3>Suivi produit (BI)</h3>
+          <p>KPIs : ventes, stocks, marge, démarque, taux d’écoulement. Web app + base dédiée.</p>
+          <div class="tags"><span class="tag">#BI</span><span class="tag">#DataViz</span></div>
+          <div class="meta">🔧 ASP.NET, IIS, Oracle</div>
+        </article>
+        <!-- 11 -->
+        <article class="card">
+          <h3>ERP Cegid ↔ Storeland</h3>
+          <p>Sync produits temps quasi réel de l’ERP vers les systèmes magasins.</p>
+          <div class="tags"><span class="tag">#ERP</span><span class="tag">#Intégration</span></div>
+          <div class="meta">🔧 VB .NET, Oracle</div>
+        </article>
+        <!-- 12 -->
+        <article class="card">
+          <h3>Apps boutiques (Intranet)</h3>
+          <p>Applis ASP.NET + sauvegardes centralisées (Veritas), restauration fiable.</p>
+          <div class="tags"><span class="tag">#Intranet</span><span class="tag">#Backup</span></div>
+          <div class="meta">🔧 IIS, SMB, Veritas</div>
+        </article>
+        <!-- 13 -->
+        <article class="card">
+          <h3>Site de commande B2B</h3>
+          <p>lescreationsltn.com en DMZ, back‑office, intégration ERP Orliweb.</p>
+          <div class="tags"><span class="tag">#B2B</span><span class="tag">#Ecommerce</span></div>
+          <div class="meta">🔧 ASP.NET, JS, Oracle</div>
+        </article>
+      </div>
     </section>
-  </div>
+
+    <section id="experience" class="container">
+      <div class="section-title"><h2>Expérience</h2><div class="bar"></div></div>
+      <div class="timeline reveal">
+        <div class="item">
+          <h4>VERGY INDUSTRIE — Chef de projet / Dev / Admin réseau & BDD</h4>
+          <div class="sub">Fév. 2014 → Aujourd’hui • Projets transverses, cadrage, autonomie</div>
+        </div>
+        <div class="item">
+          <h4>VERGY INDUSTRIE — Chef de projet junior / Dev / Admin</h4>
+          <div class="sub">Mars 2007 → Janv. 2014 • Apps métiers, datawarehouse, infra</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container">
+      <div class="section-title"><h2>Contact</h2><div class="bar"></div></div>
+      <div class="card reveal">
+        <p>Intéressé·e par mon profil pour un poste de <strong>Responsable SI / IT Manager / Head of IT</strong> ?</p>
+        <p><a class="btn" href="mailto:TODO_EMAIL">✉️ Me contacter</a> <a class="btn secondary" href="TODO_CV.pdf" download>📄 Télécharger le CV</a></p>
+        <div class="socials" style="margin-top:8px">
+          <a href="https://github.com/TODO_USERNAME" target="_blank" rel="noreferrer"> GitHub</a>
+          <a href="https://www.linkedin.com/in/TODO_LINKEDIN" target="_blank" rel="noreferrer">in LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex; align-items:center; gap:12px">
+      <span>© <span id="year"></span> DHP — Portfolio</span>
+      <span class="theme-toggle" id="themeBtnFooter" title="Basculer clair/sombre">🌓</span>
+      <span style="margin-left:auto">Construit en HTML/CSS natif (GitHub Pages)</span>
+    </div>
+  </footer>
+
+  <!-- JSON-LD (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"DHP",
+    "jobTitle":"Responsable des Systèmes d’Information",
+    "description":"18 ans d’expérience en SI : ERP Retail, intégration .NET/Oracle/SQL Server, e-commerce B2C/B2B, sécurité, PRA, virtualisation et BI.",
+    "url":"https://TODO_USERNAME.github.io",
+    "sameAs":["https://www.linkedin.com/in/TODO_LINKEDIN","https://github.com/TODO_USERNAME"]
+  }
+  </script>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme toggle (persistance)
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const saved = localStorage.getItem('theme');
+    if(saved) document.documentElement.dataset.theme = saved;
+    function setTheme(mode){
+      if(mode) { document.documentElement.dataset.theme = mode; localStorage.setItem('theme', mode); }
+      else { document.documentElement.removeAttribute('data-theme'); localStorage.removeItem('theme'); }
+    }
+    function toggleTheme(){
+      const current = document.documentElement.dataset.theme;
+      if(!current) setTheme(prefersDark ? 'light':'dark');
+      else setTheme(current === 'dark' ? 'light':'dark');
+    }
+    document.getElementById('themeBtn').addEventListener('click', toggleTheme);
+    document.getElementById('themeBtnFooter').addEventListener('click', toggleTheme);
+
+    // Reveal on scroll (accessibility friendly)
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('revealed'); e.target.style.animationDelay = '.05s'; io.unobserve(e.target);} });
+    }, {threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
 </body>
 </html>
