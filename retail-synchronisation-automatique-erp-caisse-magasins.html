@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Retail : Synchronisation automatique ERP – Caisse magasins</title>
+  <style>
+:root{
+  --bg:#ffffff;
+  --card:#f7f9fb;
+  --muted:#4b5563;
+  --text:#111827;
+  --accent:#0A66C2;
+  --accent-2:#004182;
+  --border:#d8e3f1;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,'Noto Sans',sans-serif;line-height:1.55}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1100px;margin:0 auto;padding:32px 20px}
+.header{display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:28px}
+.brand{font-weight:700;font-size:1.2rem;letter-spacing:.2px}
+.badge{border:1px solid var(--border);background:#eef4fb;border-radius:999px;padding:6px 12px;font-size:.85rem;color:var(--accent-2)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{background:linear-gradient(180deg,#ffffff,#f6f9fc);border:1px solid var(--border);border-radius:16px;padding:18px;transition:transform .15s ease, box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.08)}
+.card h3{margin:4px 0 6px;font-size:1.1rem}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.nav{display:flex;gap:10px;align-items:center;margin-top:6px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);padding:8px 12px;border-radius:12px;background:#eef4fb;color:var(--accent-2);font-size:.92rem}
+.btn:hover{background:#e2ecf8;text-decoration:none}
+.meta{color:var(--muted);font-size:.92rem;margin:10px 0 0}
+.hero{background:radial-gradient(1200px 600px at 20% -20%, rgba(10,102,194,.10), transparent 50%),
+                   radial-gradient(900px 400px at 80% -10%, rgba(0,65,130,.10), transparent 50%)}
+.title{font-size:2rem;margin:12px 0 6px}
+.subtitle{color:var(--muted);max-width:900px}
+.section{margin-top:28px}
+hr{border:0;border-top:1px solid var(--border);margin:22px 0}
+.footer{color:var(--muted);font-size:.9rem;margin-top:24px}
+.back{margin:8px 0 18px;display:inline-block}
+.content p{margin:10px 0}
+.list{padding-left:18px}
+.list li{margin:6px 0}
+.kpis{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 0}
+.kpis .pill{border:1px solid var(--border);border-radius:999px;padding:6px 10px;color:var(--accent-2);font-size:.86rem;background:#eef4fb}
+.topbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.contact{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:.95rem}
+.contact a{color:var(--accent-2)}
+.resume{background:linear-gradient(180deg,#ffffff,#f6f9fc);border:1px solid var(--border);border-radius:16px;padding:16px;margin-top:12px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+.filter{border:1px solid var(--border);border-radius:999px;padding:6px 10px;font-size:.86rem;color:var(--accent-2);cursor:pointer;background:#eef4fb}
+.filter.active{outline:2px solid var(--accent);color:var(--accent-2)}
+.card[hidden]{display:none !important}
+.h3{font-size:1.15rem;margin:14px 0 8px}
+.block{background:linear-gradient(180deg,#ffffff,#f6f9fc);border:1px solid var(--border);border-radius:14px;padding:14px;margin-top:12px}
+.small{font-size:.92rem;color:var(--muted)}
+.sidebar{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.footer-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
+</style>
+</head>
+<body class="hero">
+  <div class="container">
+    <div class="header">
+      <div class="brand">Damien Hupont — Chef de projet SI &amp; Infrastructure</div>
+      <div class="contact"><a href="https://www.linkedin.com/in/damien-hupont" target="_blank" rel="noopener">LinkedIn</a><span>·</span><a href="mailto:Damien.hupont52@gmail.com">Damien.hupont52@gmail.com</a></div>
+    </div>
+    <a class="btn back" href="index.html">← Retour au menu</a>
+    <h1 class="title">Retail : Synchronisation automatique ERP – Caisse magasins</h1>
+    <div class="content">
+      <p>Associé à Christine Laure</p>
+<p>Dans le cadre de la modernisation du SI Retail, j’ai mis en place une solution de synchronisation automatique entre l’ERP Orliweb et le logiciel de caisse Storeland, utilisée dans l’ensemble des magasins.</p>
+<div class="h3">Objectifs</div>
+<p>Garantir une cohérence totale du catalogue produits entre le siège et les points de vente.</p>
+<p>Supprimer les saisies manuelles et réduire les erreurs de prix ou de référence en magasin.</p>
+<p>Offrir une meilleure visibilité au service commercial et à la direction.</p>
+<div class="h3">Réalisations</div>
+<p>Développement d’une application en .NET assurant le transfert automatisé des données produits.</p>
+<p>Mise en place de flux sécurisés Oracle → Storeland pour gérer en temps réel les mises à jour de prix, stocks et références.</p>
+<p>Élaboration d’une documentation technique et fonctionnelle pour garantir la maintenabilité de la solution.</p>
+<p>Coordination avec les équipes magasins pour valider les tests et la mise en production.</p>
+<div class="h3">Résultats</div>
+<p>Cohérence parfaite du catalogue produits entre ERP et caisses magasins.</p>
+<p>Réduction significative des erreurs manuelles et des litiges en caisse.</p>
+<p>Gain de temps pour les équipes magasins, qui peuvent se concentrer sur le service client.</p>
+<p>Amélioration du pilotage commercial grâce à des données fiables et homogènes.</p>
+<div class="block"><div class="h3">Compétences mobilisées</div><div class="kpis"><span class="pill">Orliweb</span><span class="pill">Storeland</span><span class="pill">Développement de logiciels</span><span class="pill">Oracle Database</span><span class="pill">Gestion de projet</span></div></div>
+    </div>
+
+<div class="footer"><hr>© Damien Hupont — Portfolio projets</div>
+  </div>
+</body>
+</html>
