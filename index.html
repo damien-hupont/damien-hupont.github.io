@@ -1,483 +1,210 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="google-site-verification" content="BT3dpxq2rHLoEOjXCEy8df7DyGFcRvIqi7Y-04D-CXI" />
-  <title>Damien HUPONT — Chef de projet logiciel et infrastructure | Portfolio </title>
-  <meta name="description" content="Portfolio de DHP, Chef de projet logiciel et infrastructure (18 ans d’expérience) : projets, compétences, et réalisations en transformation digitale,ERP, BI et sécurité." />
-  <meta name="color-scheme" content="light dark" />
-  <meta property="og:title" content="DHP — Chef de projet logiciel et infrastructure | Portfolio" />
-  <meta property="og:description" content="18 ans d’expérience. Projets : migration SaaS RH, CRM 360°, ERP & retail, PRA, e-commerce B2C/B2B, sécurité & virtualisation." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="TODO_og-image.jpg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio — Damien Hupont — Chef de projet SI &amp; Infrastructure</title>
+  <meta name="description" content="Portfolio de projets — Chef de projet SI &amp; Infrastructure">
   <style>
-    :root{
-      --bg: #0b0c10;
-      --panel:#11131a;
-      --card:#141720;
-      --text:#e9ecf1;
-      --muted:#a8b0bf;
-      --brand:#6ee7ff;
-      --accent:#8b5cf6;  
-      --ring: rgba(110,231,255,.45);
-      --ok:#10b981;
-      --warn:#f59e0b;
-      --danger:#ef4444;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 14px;
-      --max: 1080px;
-    }
-    @media (prefers-color-scheme: light) {
-      :root{
-        --bg:#f6f8fb; --panel:#ffffff; --card:#ffffff;
-        --text:#11131a; --muted:#4b5563;
-        --brand:#0ea5e9; --accent:#7c3aed;
-        --ring: rgba(14,165,233,.25);
-        --shadow: 0 12px 24px rgba(2,6,23,.08);
-      }
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:
-        radial-gradient(1200px 800px at 80% -10%, rgba(110,231,255,.08), transparent 60%),
-        radial-gradient(900px 600px at -10% 10%, rgba(139,92,246,.10), transparent 50%),
-        var(--bg);
-      color:var(--text);
-      line-height:1.6;
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-    }
-    a{color:var(--brand); text-decoration:none}
-    a:hover{text-decoration:underline}
-
-    /* Layout */
-    .container{max-width:var(--max); margin:0 auto; padding:0 22px}
-    header.site{ 
-      position:sticky; top:0; z-index:50; backdrop-filter:saturate(160%) blur(10px);
-      background:color-mix(in oklab, var(--panel) 75%, transparent);
-      border-bottom:1px solid color-mix(in oklab, var(--muted) 20%, transparent);
-    }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      height:64px;
-    }
-    .brand{display:flex; align-items:center; gap:12px; font-weight:700}
-    .brand .logo{
-      width:36px; height:36px; border-radius:10px;
-      display:grid; place-items:center; background:
-        radial-gradient(80% 80% at 20% 10%, var(--brand), transparent 60%),
-        radial-gradient(80% 80% at 80% 90%, var(--accent), transparent 60%),
-        var(--card);
-      box-shadow:var(--shadow);
-      border:1px solid color-mix(in oklab, var(--brand) 25%, transparent);
-    }
-    .brand span{font-family:Poppins,Inter,sans-serif; letter-spacing:.3px}
-    .nav a.btn{
-      display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:10px;
-      background:var(--card); border:1px solid color-mix(in oklab, var(--muted) 25%, transparent);
-      text-decoration:none; font-weight:600;
-    }
-    .nav a.btn:hover{box-shadow:var(--shadow); transform:translateY(-1px)}
-
-    /* Hero */
-    .hero{padding:84px 0 36px}
-    .hero .grid{display:grid; gap:26px; grid-template-columns: 1.1fr .9fr}
-    .badge{
-      display:inline-flex; gap:10px; align-items:center; padding:6px 10px; border-radius:999px;
-      background:color-mix(in oklab, var(--brand) 10%, var(--card));
-      border:1px solid var(--ring); font-size:.9rem; color:var(--muted)
-    }
-    h1{font-family:Poppins,Inter,sans-serif; font-size:clamp(28px, 5vw, 44px); line-height:1.15; margin:12px 0}
-    .lead{font-size:1.1rem; color:var(--muted)}
-    .cta{display:flex; gap:12px; margin-top:18px; flex-wrap:wrap}
-    .btn{
-      display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; font-weight:700;
-      background:linear-gradient(135deg, color-mix(in oklab, var(--brand) 70%, var(--card)), color-mix(in oklab, var(--accent) 30%, var(--card)));
-      color:#0b1020; border:0; box-shadow:var(--shadow); text-decoration:none;
-    }
-    .btn.secondary{background:var(--card); color:var(--text); border:1px solid color-mix(in oklab, var(--muted) 25%, transparent)}
-    .btn.ghost{background:transparent; border:1px dashed color-mix(in oklab, var(--muted) 30%, transparent); color:var(--muted)}
-
-    .hero .card{
-      background:var(--card); border:1px solid color-mix(in oklab, var(--muted) 22%, transparent);
-      border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)
-    }
-    .facts{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:12px}
-    .pill{
-      background:color-mix(in oklab, var(--brand) 8%, var(--card));
-      border:1px solid color-mix(in oklab, var(--brand) 30%, transparent);
-      border-radius:12px; padding:10px 12px; font-weight:600
-    }
-    /* Sections */
-    section{padding:42px 0}
-    .section-title{display:flex; align-items:center; gap:10px; margin-bottom:18px}
-    .section-title h2{margin:0; font-size:28px; font-family:Poppins,Inter,sans-serif}
-    .section-title .bar{flex:1; height:1px; background:color-mix(in oklab, var(--muted) 20%, transparent)}
-
-    /* Skills */
-    .chips{display:flex; flex-wrap:wrap; gap:10px}
-    .chip{padding:8px 12px; border:1px solid color-mix(in oklab, var(--muted) 25%, transparent); border-radius:999px; background:var(--panel); font-weight:600}
-    .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:16px}
-
-    /* Projects */
-    .projects{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
-    .card{
-      background:var(--card); border:1px solid color-mix(in oklab, var(--muted) 22%, transparent);
-      border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)
-    }
-    .card h3{margin:0 0 6px; font-size:20px}
-    .card p{margin:0 0 10px; color:var(--muted)}
-    .tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:8px}
-    .tag{font-size:.85rem; padding:6px 10px; border-radius:999px; background:color-mix(in oklab, var(--accent) 12%, var(--panel)); border:1px solid color-mix(in oklab, var(--accent) 30%, transparent)}
-    .card .meta{display:flex; gap:10px; align-items:center; color:var(--muted); font-size:.9rem; margin-top:8px}
-    .card:hover{transform:translateY(-2px); transition:transform .2s ease}
-
-    /* Timeline */
-    .timeline{position:relative; padding-left:22px}
-    .timeline::before{content:""; position:absolute; left:7px; top:6px; bottom:6px; width:2px; background:color-mix(in oklab, var(--muted) 25%, transparent)}
-    .item{position:relative; margin:14px 0; padding-left:10px}
-    .item::before{content:""; position:absolute; left:-2px; top:6px; width:10px; height:10px; border-radius:10px; background:var(--brand); box-shadow:0 0 0 4px var(--ring)}
-    .item h4{margin:0 0 4px}
-    .item .sub{color:var(--muted); font-size:.95rem}
-
-    /* Footer */
-    footer{padding:28px 0 48px; color:var(--muted)}
-    .socials{display:flex; gap:12px}
-    .socials a{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:10px; background:var(--panel); border:1px solid color-mix(in oklab, var(--muted) 22%, transparent)}
-    .theme-toggle{margin-left:auto; cursor:pointer}
-
-    /* Responsive */
-    @media (max-width: 980px){
-      .hero .grid{grid-template-columns:1fr}
-      .projects{grid-template-columns:1fr 1fr}
-      .facts{grid-template-columns:1fr 1fr 1fr}
-    }
-    @media (max-width: 680px){
-      .projects{grid-template-columns:1fr}
-      .grid-2{grid-template-columns:1fr}
-    }
-
-    /* Subtle reveal animation */
-    .reveal{opacity:0; transform:translateY(10px); animation:reveal .6s ease forwards; }
-    @keyframes reveal{to{opacity:1; transform:none}}
-  </style>
+:root{
+  --bg:#ffffff;
+  --card:#f7f9fb;
+  --muted:#4b5563;
+  --text:#111827;
+  --accent:#0A66C2;
+  --accent-2:#004182;
+  --border:#d8e3f1;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,'Noto Sans',sans-serif;line-height:1.55}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1100px;margin:0 auto;padding:32px 20px}
+.header{display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:28px}
+.brand{font-weight:700;font-size:1.2rem;letter-spacing:.2px}
+.badge{border:1px solid var(--border);background:#eef4fb;border-radius:999px;padding:6px 12px;font-size:.85rem;color:var(--accent-2)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{background:linear-gradient(180deg,#ffffff,#f6f9fc);border:1px solid var(--border);border-radius:16px;padding:18px;transition:transform .15s ease, box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.08)}
+.card h3{margin:4px 0 6px;font-size:1.1rem}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.nav{display:flex;gap:10px;align-items:center;margin-top:6px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);padding:8px 12px;border-radius:12px;background:#eef4fb;color:var(--accent-2);font-size:.92rem}
+.btn:hover{background:#e2ecf8;text-decoration:none}
+.meta{color:var(--muted);font-size:.92rem;margin:10px 0 0}
+.hero{background:radial-gradient(1200px 600px at 20% -20%, rgba(10,102,194,.10), transparent 50%),
+                   radial-gradient(900px 400px at 80% -10%, rgba(0,65,130,.10), transparent 50%)}
+.title{font-size:2rem;margin:12px 0 6px}
+.subtitle{color:var(--muted);max-width:900px}
+.section{margin-top:28px}
+hr{border:0;border-top:1px solid var(--border);margin:22px 0}
+.footer{color:var(--muted);font-size:.9rem;margin-top:24px}
+.back{margin:8px 0 18px;display:inline-block}
+.content p{margin:10px 0}
+.list{padding-left:18px}
+.list li{margin:6px 0}
+.kpis{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 0}
+.kpis .pill{border:1px solid var(--border);border-radius:999px;padding:6px 10px;color:var(--accent-2);font-size:.86rem;background:#eef4fb}
+.topbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.contact{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:.95rem}
+.contact a{color:var(--accent-2)}
+.resume{background:linear-gradient(180deg,#ffffff,#f6f9fc);border:1px solid var(--border);border-radius:16px;padding:16px;margin-top:12px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+.filter{border:1px solid var(--border);border-radius:999px;padding:6px 10px;font-size:.86rem;color:var(--accent-2);cursor:pointer;background:#eef4fb}
+.filter.active{outline:2px solid var(--accent);color:var(--accent-2)}
+.card[hidden]{display:none !important}
+.h3{font-size:1.15rem;margin:14px 0 8px}
+.block{background:linear-gradient(180deg,#ffffff,#f6f9fc);border:1px solid var(--border);border-radius:14px;padding:14px;margin-top:12px}
+.small{font-size:.92rem;color:var(--muted)}
+.sidebar{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.footer-cols{display:block}
+.footer-cols .block{margin-top:12px}
+@media (min-width:900px){.footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}}
+</style>
 </head>
-<body>
-  <header class="site">
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo" aria-hidden="true">💠</div>
-        <span>DAMIEN HUPONT — Chef de projet logiciel et infrastructure</span>
+<body class="hero">
+  <div class="container">
+    <div class="header">
+      <div class="topbar">
+        <div class="brand">Damien Hupont — Chef de projet SI &amp; Infrastructure</div>
+        <div class="badge">Pilotage projets · SI · infrastructure · cybersécurité · data &amp; retail</div>
       </div>
-     <nav>
-  <a class="btn secondary" href="#projets" title="Voir mes projets">🚀 Projets</a>
-  <a class="btn secondary" href="#competences" title="Voir mes compétences">🛠️ Compétences</a>
-  <a class="btn secondary" href="#formation" title="Voir mes formations">🎓 Formations</a>
-  <a class="btn secondary" href="#certification" title="Voir mes certifications">📜 Certifications</a>
-  <a class="btn secondary" href="damien_hupont-_chef_de_projet_logiciel_et_infrastructure_-_secteur_it.pdf" download>📄 CV</a>
-</nav>
+      <div class="contact">
+        <a href="https://www.linkedin.com/in/damien-hupont" target="_blank" rel="noopener">LinkedIn</a>
+        <span>·</span>
+        <a href="mailto:Damien.hupont52@gmail.com">Damien.hupont52@gmail.com</a>
+      </div>
     </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container grid reveal grid-2" style="align-items:center">
-        <div>
-          <span class="badge">✅ Disponible pour opportunités / Remote / Hybride FRANCE </span>
-          <h1>Chef de projet logiciel et infrastructure<br><span style="color:var(--brand)">18 ans d’expérience</span></h1>
-          <p class="lead">
-           Un parcours jalonné de plus de 15 projets IT stratégiques : ERP & retail, CRM & data, e-commerce B2C/B2B, migrations RH SaaS, applications internes et cybersécurité — un portfolio qui illustre la transformation digitale d’une entreprise multi-sites (~100 M€ CA).
-          </p>
-          <div class="cta">
-            <a class="btn" href="#projets">🚀 Voir les projets</a>
-            <a class="btn secondary" href="#contact">🤝 Contacter</a>
-            <a class="btn ghost" href="https://damien-hupont.github.io" target="_blank" rel="noreferrer"> GitHub</a>
-            <a class="btn ghost" href="https://www.linkedin.com/in/damien-hupont/" target="_blank" rel="noreferrer">in LinkedIn</a>
-          </div>
-          <div class="facts">
-            <div class="pill">Retail & ERP</div>
-            <div class="pill">Intégration & Data</div>
-            <div class="pill">Sécurité & PRA</div>
-          </div>
-        </div>
-        <aside class="card">
-          <h3 style="margin:6px 0 8px">En bref</h3>
-          <ul style="margin:0; padding-left:18px">
-  <li><b>18 ans</b> en IT (systèmes, <b>réseaux</b>, BDD & <b>développement</b>)</li>
-  <li><b>40 serveurs</b>, <b>200 postes</b>,<b>150 sites distants</b></li>
-  <li>Gestion <b>10+</b> partenaires IT</li>
-  <li> <b>15+</b> projets stratégiques (applicatif, <b>réseaux</b>, sécurité)</li>
-  <li>Spécialisation en <b>Cybersécurité</b> </li>
-  <li>Entreprise ≈ <b>100 M€ CA</b> </li>
-         </ul>
-        </aside>
-      </div>
-    </section>
-
-    <section id="competences" class="container">
-      <div class="section-title"><h2>Compétences clés</h2><div class="bar"></div></div>
-      <div class="grid-2 reveal">
-        <div class="card">
-          <h3>Techniques</h3>
-          <div class="chips" aria-label="Compétences techniques">
-            <span class="chip">Bases de données : Oracle, SQL Server, PostgreSQL, MySQL</span>
-            <span class="chip">Langages : C#, VB .NET, Java, JavaScript, Python, SQL, Bash, PowerShell, SPL plunk</span>
-            <span class="chip">Frameworks : .NET (Core, WinForms, ASP.NET), Web API</span>
-            <span class="chip">Systèmes : Windows/Server, Linux (Debian/Ubuntu)</span>
-            <span class="chip">Web : IIS, Apache</span>
-            <span class="chip">Virtualisation : VMware, Hyper‑V</span>
-            <span class="chip">Réseaux/Sécu : Cisco, Stormshield, GPO, WSUS, AD, Pfsense</span>
-            <span class="chip">ERP/Retails :  Storeland, Winstore, Talentia</span>
-            <span class="chip">ERP Gestion de l'entreprise : Cegid Orli, Talentia, Alicia SDWorx</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Humaines & Méthodes</h3>
-          <div class="chips">
-            <span class="chip">Gestion de projet</span>
-            <span class="chip">Analyse & synthèse</span>
-            <span class="chip">Pédagogie & accompagnement</span>
-            <span class="chip">Rigueur & qualité</span>
-            <span class="chip">Documentation technique</span>
-            <span class="chip">Planification</span>
-            <span class="chip">Esprit d’équipe</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projets" class="container">
-      <div class="section-title"><h2>Projets phares</h2><div class="bar"></div></div>
-      <div class="projects reveal">
-   <!-- 0 -->
-        <article class="card">
-  <h3>Rapport de Pentest</h3>
-  <p>Réalisation de tests d’intrusion et rédaction de rapports professionnels dans le cadre de ma formation Datascientest.</p>
-  <div class="tags"><span class="tag">#CyberSécurité</span><span class="tag">#Pentest</span></div>
-  <div class="meta">🔧 Kali Linux, Metasploit, Burp Suite, Nmap, Wireshark, Hydra, John the Ripper</div>
-  </article>
-        <!-- 1 -->
-        <article class="card">
-          <h3>Migration RH Alicia (SaaS)</h3>
-          <p>Passage de l’on‑premise au SaaS (SDWorx), adaptation des applis internes, conduite du changement.</p>
-          <div class="tags"><span class="tag">#SaaS</span><span class="tag">#RH</span><span class="tag">#Intégration</span></div>
-          <div class="meta">🔧 Oracle, VB .NET • 🤝 Prestataire</div>
-        </article>
-        <!-- 2 -->
-        <article class="card">
-          <h3>CRM 360° (fusion clients)</h3>
-          <p>Consolidation boutiques + e‑commerce, déduplication, analytics marketing.</p>
-          <div class="tags"><span class="tag">#CRM</span><span class="tag">#Data</span><span class="tag">#Marketing</span></div>
-          <div class="meta">🔧 VB .NET, Oracle, Access</div>
-        </article>
-        <!-- 3 -->
-        <article class="card">
-          <h3>Opt‑in centralisé (RGPD)</h3>
-          <p>Centralisation consentements newsletter, échanges sécurisés avec l’éditeur web.</p>
-          <div class="tags"><span class="tag">#RGPD</span><span class="tag">#DataGov</span></div>
-          <div class="meta">🔧 Oracle, PL/SQL • 🧩 Clever Age</div>
-        </article>
-        <!-- 4 -->
-        <article class="card">
-          <h3>Migration Talentia → SQL Server</h3>
-          <p>Plan de migration multi‑serveurs, adaptation des applis (6 mois), continuité comptable.</p>
-          <div class="tags"><span class="tag">#Migration</span><span class="tag">#Finance</span></div>
-          <div class="meta">🔧 SQL Server, Talentia, .NET</div>
-        </article>
-        <!-- 5 -->
-        <article class="card">
-          <h3>Gestion Temps et Activité magasins (outil interne)</h3>
-          <p>Planning, absences, interfaces Winstore & RH Alicia, serveur dédié.</p>
-          <div class="tags"><span class="tag">#Workforce</span><span class="tag">#Retail</span></div>
-          <div class="meta">🔧 VB .NET, ASP.NET, AD</div>
-        </article>
-
-         <article class="card">
-          <h3>CRM déporté vers SKEEPERS </h3>
-          <p>Interfacage avec le logiciel SKEEPERS (ADVALO) </p>
-          <div class="tags"><span class="tag">#CRM</span><span class="tag">#Data</span><span class="tag">#Marketing</span><span class="tag">#Interface</span></div>
-          <div class="meta">🔧 VB .NET, Oracle, Access</div>
-        </article>
-        
-        <!-- 6 -->
-        <article class="card">
-          <h3>B2C Christine‑Laure (Magento)</h3>
-          <p>Flux produits/photos/tarifs → web, import commandes → ERP Cegid, sécurité des échanges.</p>
-          <div class="tags"><span class="tag">#Ecommerce</span><span class="tag">#Omnicanal</span></div>
-          <div class="meta">🔧 .NET, Oracle, Magento</div>
-        </article>
-        <!-- 7 -->
-        <article class="card">
-          <h3>Parc & salle serveurs</h3>
-          <p>~200 postes &gt;40 serveurs : WSUS, SEP, AD, sauvegardes, PABX.</p>
-          <div class="tags"><span class="tag">#Ops</span><span class="tag">#SysAdmin</span></div>
-          <div class="meta">🔧 Windows/Server, VMware, Hyper‑V</div>
-        </article>
-        <!-- 8 -->
-        <article class="card">
-          <h3>PRA, PCA (audits)</h3>
-          <p>Rédaction & tests sur environnement virtuel, continuité d’activité.</p>
-          <div class="tags"><span class="tag">#PRA</span><span class="tag">#Cyber</span></div>
-          <div class="meta">🔧 VMware, Hyper‑V</div>
-        </article>
-        <!-- 9 -->
-        <article class="card">
-          <h3>Déploiement Winstore (150 magasins)</h3>
-          <p>Master Windows 10, docs & procédures, planification & support des interventions.</p>
-          <div class="tags"><span class="tag">#POS</span><span class="tag">#Déploiement</span></div>
-          <div class="meta">🔧 Winstore, WSUS, AD</div>
-        </article>
-        <!-- 10 -->
-        <article class="card">
-          <h3>Suivi produit (BI)</h3>
-          <p>KPIs : ventes, stocks, marge, démarque, taux d’écoulement. Web app + base dédiée.</p>
-          <div class="tags"><span class="tag">#BI</span><span class="tag">#DataViz</span></div>
-          <div class="meta">🔧 ASP.NET, IIS, Oracle</div>
-        </article>
-        <!-- 11 -->
-        <article class="card">
-          <h3>ERP Cegid ↔ Storeland</h3>
-          <p>Sync produits temps quasi réel de l’ERP vers les systèmes magasins.</p>
-          <div class="tags"><span class="tag">#ERP</span><span class="tag">#Intégration</span></div>
-          <div class="meta">🔧 VB .NET, Oracle</div>
-        </article>
-        <!-- 12 -->
-        <article class="card">
-          <h3>Apps boutiques (Intranet)</h3>
-          <p>Applis ASP.NET + sauvegardes centralisées (Veritas), restauration fiable.</p>
-          <div class="tags"><span class="tag">#Intranet</span><span class="tag">#Backup</span></div>
-          <div class="meta">🔧 IIS, SMB, Veritas</div>
-        </article>
-        <!-- 13 -->
-        <article class="card">
-          <h3>Site de commande B2B</h3>
-          <p>lescreationsltn.com en DMZ, back‑office, intégration ERP Orliweb.</p>
-          <div class="tags"><span class="tag">#B2B</span><span class="tag">#Ecommerce</span></div>
-          <div class="meta">🔧 ASP.NET, JS, Oracle</div>
-        </article>
-     
-      </div>
-    </section>
-
-   <section id="experience" class="container">
-  <div class="section-title"><h2>Expérience</h2><div class="bar"></div></div>
-  <div class="timeline reveal">
-    <div class="item">
-      <h4>Chef de projet — VERGY INDUSTRIES (~100M CA)</h4>
-      <div class="sub">2007 – 2025 • Adjoint au Directeur Informatique</div>
-      <ul style="margin:10px 0 0 18px; padding:0; line-height:1.6">
-        <li>Supervision de l’infrastructure réseau (40 serveurs, 200 postes)</li>
-        <li>Administration de la sécurité des systèmes d’information et des ERP</li>
-        <li>Développement d’applications pour le datawarehouse lié aux ERP et CRM</li>
-        <li>Gestion du support utilisateurs (technique et fonctionnel)</li>
-        <li>Pilotage de migrations logicielles complexes (RH, compta, retail, e-commerce)</li>
-        <li>Encadrement et gestion d’équipe en l’absence du directeur</li>
-      </ul>
+    <div class="resume">
+      <div class="h3">Résumé</div>
+      <p>Chef de projet SI & infrastructure avec 18 ans d’expérience : pilotage de projets d’intégration (ERP, retail, e‑commerce), modernisation d’applications, cybersécurité et data. Habitué à cadrer, planifier, coordonner les équipes et sécuriser les mises en production.</p>
+      <div class="small">Orientation : delivery, sécurité, fiabilité, valeur métier.</div>
     </div>
-  </div>
-</section>
 
-<section id="certification" class="container">
-  <div class="section-title"><h2>Certifications</h2><div class="bar"></div></div>
-  <div class="timeline reveal">
-      <div class="item">
-          <h4>CSNA — Certified Stormshield Network Administrator</h4>
-          <div class="sub">Obtenue en 2025 • Sécurité des réseaux & pare-feu Stormshield</div>
+    <div class="section">
+      <div class="h3">Compétences / mots‑clés</div>
+      <div class="filters">
+        <button class="filter active" data-key="__all">Tous</button><button class="filter" data-key="Sécurité réseau">Sécurité réseau</button><button class="filter" data-key="Rapport pentest">Rapport pentest</button><button class="filter" data-key="Snort">Snort</button><button class="filter" data-key="Mitre att &amp; ck">Mitre att &amp; ck</button><button class="filter" data-key="Cybersécurité">Cybersécurité</button><button class="filter" data-key="Gestion de projet">Gestion de projet</button><button class="filter" data-key="Oracle Database">Oracle Database</button><button class="filter" data-key=".NET framework">.NET framework</button><button class="filter" data-key="Sécurité de l&#x27;information">Sécurité de l&#x27;information</button><button class="filter" data-key="RGPD">RGPD</button><button class="filter" data-key="Développement de logiciels">Développement de logiciels</button><button class="filter" data-key="ASP.NET">ASP.NET</button><button class="filter" data-key="JavaScript">JavaScript</button><button class="filter" data-key="Backup Exec">Backup Exec</button><button class="filter" data-key="Entrepreneuriat">Entrepreneuriat</button><button class="filter" data-key="Impression 3D">Impression 3D</button><button class="filter" data-key="Orliweb">Orliweb</button><button class="filter" data-key="Storeland">Storeland</button><button class="filter" data-key="API Web ASP.NET">API Web ASP.NET</button><button class="filter" data-key="Visual Studio">Visual Studio</button><button class="filter" data-key="Microsoft SQL Server">Microsoft SQL Server</button><button class="filter" data-key="Administration de bases de données">Administration de bases de données</button><button class="filter" data-key="Comptabilité">Comptabilité</button><button class="filter" data-key="Base de données">Base de données</button><button class="filter" data-key="B.I">B.I</button><button class="filter" data-key="Analyse marketing">Analyse marketing</button>
       </div>
+    </div>
 
-      <div class="item">
-          <h4>ISO27001 Lead Implementer </h4>
-          <div class="sub">Obtenue en 2025 • Gouvernance de la securité de l'information</div>
-      </div>
-  </div>
-</section>
+    <div class="section grid">
+      
+    <a class="card" href="projets/projet-cybersécurité-audit-sécurisation-dinfrastructure-iron4software.html" data-tags="Sécurité réseau|Rapport pentest|Snort|Mitre att &amp; ck|Cybersécurité|Gestion de projet">
+      <h3>Projet Cybersécurité – Audit &amp; Sécurisation d’Infrastructure (Iron4Software)</h3>
+      <div class='meta'>juin 2025 - aujourd’hui</div>
+      <p>Dans le cadre de ma formation Datascientest, j’ai mené un projet complet de cybersécurité pour Iron4Software, une TPE fictive spécialisée dans le développement logiciel.</p>
+      <div class="nav"><span class="btn">Voir le projet →</span></div>
+    </a>
     
-    <section id="formation" class="container">
-  <div class="section-title"><h2>Formations</h2><div class="bar"></div></div>
-  <div class="timeline reveal">
-    <div class="item">
-      <h4>Ingénieur Cybersécurité</h4>
-      <div class="sub">École Datascientest • fin prévue 12/2025</div>
+    <a class="card" href="projets/automatisation-des-flux-e-commerce-christine-laurefr.html" data-tags="Oracle Database|.NET framework|Gestion de projet|Sécurité de l&#x27;information">
+      <h3>Automatisation des flux e-commerce Christine-laure.fr</h3>
+      
+      <p>Associé à Christine Laure</p>
+      <div class="nav"><span class="btn">Voir le projet →</span></div>
+    </a>
+    
+    <a class="card" href="projets/conformité-rgpd-centralisation-et-sécurisation-des-consentements-clients.html" data-tags="RGPD|Sécurité de l&#x27;information|Gestion de projet|Développement de logiciels">
+      <h3>Conformité RGPD : Centralisation et sécurisation des consentements clients</h3>
+      
+      <p>Mise en conformité RGPD avec une solution de centralisation des consentements newsletters.</p>
+      <div class="nav"><span class="btn">Voir le projet →</span></div>
+    </a>
+    
+    <a class="card" href="projets/digitalisation-du-processus-de-commande-b2b.html" data-tags="ASP.NET|Oracle Database|JavaScript|Gestion de projet">
+      <h3>Digitalisation du processus de commande B2B</h3>
+      
+      <p>Associé à Christine Laure</p>
+      <div class="nav"><span class="btn">Voir le projet →</span></div>
+    </a>
+    
+    <a class="card" href="projets/digitalisation-points-de-vente-développement-dapplicatifs-métiers-magasins.html" data-tags="Backup Exec|Développement de logiciels|ASP.NET|Sécurité de l&#x27;information">
+      <h3>Digitalisation points de vente : Développement d’applicatifs métiers magasins</h3>
+      
+      <p>Associé à Christine Laure</p>
+      <div class="nav"><span class="btn">Voir le projet →</span></div>
+    </a>
+    
+    <a class="card" href="projets/little-lights-by-3ddamdam-création-et-vente-de-lampes-personnalisées-pour-enfant.html" data-tags="Gestion de projet|Entrepreneuriat|Impression 3D">
+      <h3>Little Lights by 3ddamdam – Création et vente de lampes personnalisées pour enfants</h3>
+      
+      <p>Dans le cadre de mon activité entrepreneuriale, j’ai lancé 3DDamDam, une micro-entreprise spécialisée dans la conception et la fabrication de lampes personnalisées pour enfants, réalisées grâce à l’impression 3D.</p>
+      <div class="nav"><span class="btn">Voir le projet →</span></div>
+    </a>
+    
+    <a class="card" href="projets/modernisation-rh-migration-vers-une-solution-saas.html" data-tags="Gestion de projet|Développement de logiciels">
+      <h3>Modernisation RH : Migration vers une solution SaaS</h3>
+      
+      <p>Associé à Christine Laure</p>
+      <div class="nav"><span class="btn">Voir le projet →</span></div>
+    </a>
+    
+    <a class="card" href="projets/retail-synchronisation-automatique-erp-caisse-magasins.html" data-tags="Orliweb|Storeland|Développement de logiciels|Oracle Database|Gestion de projet">
+      <h3>Retail : Synchronisation automatique ERP – Caisse magasins</h3>
+      
+      <p>Associé à Christine Laure</p>
+      <div class="nav"><span class="btn">Voir le projet →</span></div>
+    </a>
+    
+    <a class="card" href="projets/solution-bi-suivi-et-performance-des-produits.html" data-tags="Oracle Database|API Web ASP.NET|Visual Studio">
+      <h3>Solution BI – Suivi et performance des produits</h3>
+      
+      <p>Associé à Christine Laure</p>
+      <div class="nav"><span class="btn">Voir le projet →</span></div>
+    </a>
+    
+    <a class="card" href="projets/transformation-si-finance-migration-talentia-modernisation-comptable.html" data-tags="Oracle Database|Microsoft SQL Server|Développement de logiciels|Administration de bases de données|Gestion de projet|Comptabilité">
+      <h3>Transformation SI Finance : Migration Talentia &amp; modernisation comptable</h3>
+      
+      <p>Associé à Christine Laure</p>
+      <div class="nav"><span class="btn">Voir le projet →</span></div>
+    </a>
+    
+    <a class="card" href="projets/vision-360-client-mise-en-place-dun-crm-unifié.html" data-tags="Administration de bases de données|Base de données|Oracle Database|B.I|Analyse marketing">
+      <h3>Vision 360° Client : Mise en place d’un CRM unifié</h3>
+      
+      <p>Associé à Christine Laure</p>
+      <div class="nav"><span class="btn">Voir le projet →</span></div>
+    </a>
+    
     </div>
-    <div class="item">
-      <h4>Licence Informatique</h4>
-      <div class="sub">Université de Bourgogne — Top 1 promo • 2007</div>
-    </div>
-    <div class="item">
-      <h4>BTS Informatique de gestion</h4>
-      <div class="sub">Lycée Edme Bouchardon (Chaumont) — Top 1 promo • 2006</div>
-    </div>
-    <div class="item">
-      <h4>BAC Scientifique</h4>
-      <div class="sub">Lycée Edme Bouchardon (Chaumont) • 2004</div>
-    </div>
+
+    <div class=\"h3\">Parcours &amp; certifications</div>
+<ul class="list"><li>ISO27001 Lead Implementer</li>
+<li>Stormshield CSNACONTACT</li>
+<li>06 59 93 10 19</li>
+<li>Damien.hupont52@gmail.com</li>
+<li>Mobilité : FR | Remote</li>
+<li>Français</li>
+<li>B</li>
+<li>Damien HUPONT</li>
+<li>Chef de projet logiciel et infrastructure - Secteur IT</li></ul></div><div class="block"><div class="h3">Formation</div><ul class="list"><li>Ingénieur Cybersécurité – RNCP niveau 7 – Bac+5</li>
+<li>Ecole Datascientest, Paris - Depuis 06.2025</li>
+<li>Licence informatique</li>
+<li>Université de Bourgogne, Dijon - 09.2006 / 06.2007</li></ul></div><div class="block"><div class="h3">Expérience</div><ul class="list"><li>Habitué à coordonner partenaires et projets stratégiques, j’élargis aujourd’hui mon</li>
+<li>expertise à la cybersécurité.</li>
+<li>Mon objectif : travailler sur des projets en infrastructures, développement et cybersécurité</li></ul></div></div>
+<div class="h3">Parcours &amp; certifications</div>
+<div class="footer-cols"><div class="block"><div class="h3">Expérience</div><ul class="list"><li>transverses.</li>
+<li>Habitué à coordonner des partenaires et des projets stratégiques, j’élargis aujourd’hui mon</li>
+<li>expertise en cybersécurité pour renforcer la gouvernance et la conformité des systèmes</li></ul></div></div>
+<div class="footer"><hr>© Damien Hupont — Portfolio projets</div>
   </div>
-</section>
-
-    <section id="contact" class="container">
-      <div class="section-title"><h2>Contact</h2><div class="bar"></div></div>
-      <div class="card reveal">
-        <p>Intéressé·e par mon profil pour un poste de <strong>Responsable SI / IT Manager / Head of IT</strong> ?</p>
-        <p><a class="btn" href="mailto:damien.hupont52@gmail.com">✉️ Me contacter</a> <a class="btn secondary" href="damien_hupont-_chef_de_projet_logiciel_et_infrastructure_-_secteur_it.pdf" download>📄 Télécharger le CV</a></p>
-        <div class="socials" style="margin-top:8px">
-          <a href="https://damien-hupont.github.io" target="_blank" rel="noreferrer"> GitHub</a>
-          <a href="https://www.linkedin.com/in/damien-hupont" target="_blank" rel="noreferrer">in LinkedIn</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container" style="display:flex; align-items:center; gap:12px">
-      <span>© <span id="year"></span> DHP — Portfolio</span>
-      <span class="theme-toggle" id="themeBtnFooter" title="Basculer clair/sombre">🌓</span>
-      <span style="margin-left:auto">Construit en HTML/CSS natif (GitHub Pages)</span>
-    </div>
-  </footer>
-
-  <!-- JSON-LD (SEO) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"DHP",
-    "jobTitle":"Responsable des Systèmes d’Information",
-    "description":"18 ans d’expérience en SI : ERP Retail, intégration .NET/Oracle/SQL Server, e-commerce B2C/B2B, sécurité, PRA, virtualisation et BI.",
-    "url":"https://damien-hupont.github.io",
-    "sameAs":["https://www.linkedin.com/in/damien-hupont","https://github.com/damien-hupont"]
-  }
-  </script>
-
   <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Theme toggle (persistance)
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const saved = localStorage.getItem('theme');
-    if(saved) document.documentElement.dataset.theme = saved;
-    function setTheme(mode){
-      if(mode) { document.documentElement.dataset.theme = mode; localStorage.setItem('theme', mode); }
-      else { document.documentElement.removeAttribute('data-theme'); localStorage.removeItem('theme'); }
-    }
-    function toggleTheme(){
-      const current = document.documentElement.dataset.theme;
-      if(!current) setTheme(prefersDark ? 'light':'dark');
-      else setTheme(current === 'dark' ? 'light':'dark');
-    }
-    document.getElementById('themeBtn').addEventListener('click', toggleTheme);
-    document.getElementById('themeBtnFooter').addEventListener('click', toggleTheme);
-
-    // Reveal on scroll (accessibility friendly)
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('revealed'); e.target.style.animationDelay = '.05s'; io.unobserve(e.target);} });
-    }, {threshold:.1});
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-  </script>
+document.querySelectorAll('.filter').forEach(b=>{
+  b.addEventListener('click',()=>{
+    const k = b.dataset.key;
+    const isAll = k==='__all';
+    document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.querySelectorAll('.card[data-tags]').forEach(card=>{
+      if(isAll){ card.hidden=false; return; }
+      const tags = card.dataset.tags.toLowerCase().split('|');
+      card.hidden = !tags.includes(k.toLowerCase());
+    });
+  });
+});
+</script>
 </body>
 </html>
